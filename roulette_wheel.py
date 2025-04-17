@@ -24,9 +24,9 @@ roulette_agent = Agent(
 )
 
 @roulette_agent.tool
-async def roulette_wheel(ctx: RunContext[int], square: int) -> str:  
+async def roulette_wheel(ctx: RunContext[int], square: int) -> bool:  
     """check if the square is a winner"""
-    return 'winner' if square == ctx.deps else 'loser'
+    return square == ctx.deps
 
 
 # Run the agent
